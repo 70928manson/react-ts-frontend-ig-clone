@@ -12,26 +12,26 @@ const IGProfile: React.FC = () => {
         },
         {
           id: 2,
-          location: "Singapore",
+          location: "Taiwan",
           account: "fm_999",
           isFollowing: true,
           avatar: "/images/avatars/a2.png",
         },
         {
           id: 3,
-          location: "Singapore",
+          location: "USA",
           account: "joanne_999",
           isFollowing: true,
           avatar: "/images/avatars/a3.png",
         },
         {
           id: 4,
-          location: "Singapore",
+          location: "Japan",
           account: "focus_999",
           isFollowing: true,
           avatar: "/images/avatars/a4.png",
         },
-    ]
+    ];
 
   return (
     <div className="mt-8 ml-8 shadow-lg box-border p-2">
