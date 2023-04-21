@@ -1,5 +1,6 @@
 {
-  "name": "my-ig",
+  "name": "react-ts-frontend-ig-clone",
+  "homepage": "https://70928manson.github.io/react-ts-frontend-ig-clone/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +14,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.23",
     "autoprefixer": "^10.4.2",
+    "gh-pages": "^5.0.0",
     "json-server": "^0.17.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
@@ -32,7 +34,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier -w ./src",
-    "server": "json-server --watch db.json --port 3004 -d 1500"
+    "server": "json-server --watch db.json --port 3004 -d 1500",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
