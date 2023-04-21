@@ -8,9 +8,9 @@ const IGHeader: React.FC = () => {
       <div className="flex justify-between items-center h-[60px] px-2 box-border lg:max-w-[1024px] lg:mx-auto lg:px-0">
         <img
           className="w-[100px] cursor-pointer"
-          src="/images/logo.svg"
+          src="/react-ts-frontend-ig-clone/images/logo.svg"
           onClick={() => {
-            go("/");
+            go("/react-ts-frontend-ig-clone");
           }}
           alt="ig icon"
         />
@@ -22,7 +22,7 @@ const IGHeader: React.FC = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             onClick={() => {
-              go("/");
+              go("/react-ts-frontend-ig-clone");
             }}
           >
             <path
@@ -39,7 +39,7 @@ const IGHeader: React.FC = () => {
             viewBox="0 0 24 24"
             stroke="currentColor"
             onClick={() => {
-              go("/following");
+              go("/react-ts-frontend-ig-clone/following");
             }}
           >
             <path

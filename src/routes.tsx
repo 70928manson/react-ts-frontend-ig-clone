@@ -5,12 +5,12 @@ import NotFound from "./pages/notFound";
 
 const routes: RouteObject[] = [
   {
-    path: "/",
+    path: "/react-ts-frontend-ig-clone",
     element: <Home />,
     children: [],
   },
   {
-    path: "/following",
+    path: "/react-ts-frontend-ig-clone/following",
     element: <Following />,
     children: [],
   },
