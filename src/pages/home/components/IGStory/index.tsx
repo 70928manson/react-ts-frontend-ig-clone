@@ -8,27 +8,27 @@ const IGStory: React.FC = () => {
   const storyData = [
     {
       "id": 1,
-      "name": "bruce_fe",
+      "name": "bruce_1234",
       "avatar": "/react-ts-frontend-ig-clone/images/avatars/a1.png"
     },
     {
       "id": 2,
-      "name": "max",
+      "name": "__x_x__",
       "avatar": "/react-ts-frontend-ig-clone/images/avatars/a2.png"
     },
     {
       "id": 3,
-      "name": "fm",
+      "name": "gogo_0214",
       "avatar": "/react-ts-frontend-ig-clone/images/avatars/a3.png"
     },
     {
       "id": 4,
-      "name": "joanne",
+      "name": "zoe_0200",
       "avatar": "/react-ts-frontend-ig-clone/images/avatars/a4.png"
     },
     {
       "id": 5,
-      "name": "focus",
+      "name": "zoe_0000",
       "avatar": "/react-ts-frontend-ig-clone/images/avatars/a5.png"
     },
     {
