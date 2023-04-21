@@ -1,37 +1,40 @@
 import IGUser from "components/IGUser";
+import { useAppSelector } from "hooks";
 
 const IGProfile: React.FC = () => {
+  const friendReducer = useAppSelector((state) => state.friendReducer);
+  const friends = friendReducer.friends.slice(0, 4);
 
-    const friends = [
-        {
-          id: 1,
-          location: "Singapore",
-          account: "max_999",
-          isFollowing: true,
-          avatar: "/images/avatars/a1.png",
-        },
-        {
-          id: 2,
-          location: "Taiwan",
-          account: "fm_999",
-          isFollowing: true,
-          avatar: "/images/avatars/a2.png",
-        },
-        {
-          id: 3,
-          location: "USA",
-          account: "joanne_999",
-          isFollowing: true,
-          avatar: "/images/avatars/a3.png",
-        },
-        {
-          id: 4,
-          location: "Japan",
-          account: "focus_999",
-          isFollowing: true,
-          avatar: "/images/avatars/a4.png",
-        },
-    ];
+  // const friends = [
+  //       {
+  //         id: 1,
+  //         location: "Singapore",
+  //         account: "max_999",
+  //         isFollowing: true,
+  //         avatar: "/images/avatars/a1.png",
+  //       },
+  //       {
+  //         id: 2,
+  //         location: "Taiwan",
+  //         account: "fm_999",
+  //         isFollowing: true,
+  //         avatar: "/images/avatars/a2.png",
+  //       },
+  //       {
+  //         id: 3,
+  //         location: "USA",
+  //         account: "joanne_999",
+  //         isFollowing: true,
+  //         avatar: "/images/avatars/a3.png",
+  //       },
+  //       {
+  //         id: 4,
+  //         location: "Japan",
+  //         account: "focus_999",
+  //         isFollowing: true,
+  //         avatar: "/images/avatars/a4.png",
+  //       },
+  //   ];
 
   return (
     <div className="mt-8 ml-8 shadow-lg box-border p-2">

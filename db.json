@@ -2,12 +2,12 @@
   "posts": [
     {
       "id": 1,
-      "location": "布魯斯前端",
+      "location": "國立成功大學",
       "account": "bruce_1234",
       "avatar": "/images/avatars/a1.png",
       "photo": "/images/posts/main1.png",
       "likes": 999,
-      "description": "我的老天鵝！",
+      "description": "台南的太陽好熱，所以我要穿厚一點！",
       "hashTags": "#鵝鵝",
       "createTime": "1 HOURS AGO"
     },
