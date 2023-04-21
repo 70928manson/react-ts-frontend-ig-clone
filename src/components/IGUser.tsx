@@ -1,5 +1,6 @@
 import { useAppDispatch } from "hooks";
 import { follow, unFollow } from "slices/friendSlice";
+import { memo } from 'react';
 
 type IGUserProps = {
     size?: "medium" | "small";
@@ -11,7 +12,7 @@ type IGUserProps = {
     id?: number;
 }
 
-const IGUser:React.FC<IGUserProps> = ({
+const IGUser:React.FC<IGUserProps> = memo(({
     size = "small",
     showFollow = false,
     isFollowing = false,
@@ -58,6 +59,6 @@ const IGUser:React.FC<IGUserProps> = ({
             )}
         </div>
     );
-};
+});
 
 export default IGUser;
