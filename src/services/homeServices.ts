@@ -1,47 +1,46 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 type IGPost = {
-    id: number;
-    location: string;
-    account: string;
-    avatar: string;
-    photo: string;
-    likes: number;
-    description: string;
-    hashTags: string;
-    createTime: string;
-}
+  id: number;
+  location: string;
+  account: string;
+  avatar: string;
+  photo: string;
+  likes: number;
+  description: string;
+  hashTags: string;
+  createTime: string;
+};
 
 type IGStory = {
-    id: number;
-    name: string;
-    avatar: string;
-}
+  id: number;
+  name: string;
+  avatar: string;
+};
 //https://sheets.googleapis.com/v4/spreadsheets/
 //${process.env.REACT_APP_ID}/values/${process.env.REACT_APP_SHEET}?alt=json&key=${process.env.REACT_APP_KEY}
 
-
 export const homeApi = createApi({
-    reducerPath: "homeApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3004/" }),
-    endpoints: (builder) => ({
-        getIGPosts: builder.query<IGPost[], number | "all">({
-            query: (id) => {
-                if (id !== "all") {
-                    return `posts/${id}`
-                }
-                return "posts";
-            },
-        }),
-        getIGStories: builder.query<IGStory[], number | "all">({
-            query: (id) => {
-                if (id !== "all") {
-                    return `stories/${id}`
-                }
-                return "stories";
-            },
-        }),
+  reducerPath: "homeApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3004/" }),
+  endpoints: (builder) => ({
+    getIGPosts: builder.query<IGPost[], number | "all">({
+      query: (id) => {
+        if (id !== "all") {
+          return `posts/${id}`;
+        }
+        return "posts";
+      },
     }),
+    getIGStories: builder.query<IGStory[], number | "all">({
+      query: (id) => {
+        if (id !== "all") {
+          return `stories/${id}`;
+        }
+        return "stories";
+      },
+    }),
+  }),
 });
 
 // Export hooks for usage in functional components, which are

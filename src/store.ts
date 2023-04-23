@@ -3,11 +3,11 @@ import { homeApi } from "services/homeServices";
 import friendReducer from "slices/friendSlice";
 
 export const store = configureStore({
-    reducer: {
-        [homeApi.reducerPath]: homeApi.reducer,
-        friendReducer,
-    },
-    middleware: (getDefaultMiddleware) =>
+  reducer: {
+    [homeApi.reducerPath]: homeApi.reducer,
+    friendReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(homeApi.middleware),
 });
 
