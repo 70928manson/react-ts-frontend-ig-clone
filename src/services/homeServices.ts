@@ -17,9 +17,8 @@ type IGStory = {
   name: string;
   avatar: string;
 };
-//https://sheets.googleapis.com/v4/spreadsheets/
-//${process.env.REACT_APP_ID}/values/${process.env.REACT_APP_SHEET}?alt=json&key=${process.env.REACT_APP_KEY}
 
+//baseUrl帶入api url得到資料
 export const homeApi = createApi({
   reducerPath: "homeApi",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3004/" }),
