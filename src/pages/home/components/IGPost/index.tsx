@@ -1,6 +1,8 @@
 import IGUser from "components/IGUser";
 import Comment from "./Comment";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 type IGPostProps = {
   account: string;
   location: string;
@@ -25,7 +27,7 @@ const IGPost: React.FC<IGPostProps> = ({
   return (
     <div className="shadow-md pb-4 lg:mb-8">
       <IGUser account={account} location={location} avatar={avatar} />
-      <img src={photo} alt="post" />
+      <LazyLoadImage src={photo} alt="post" />
       <Comment
         account={account}
         likes={likes}

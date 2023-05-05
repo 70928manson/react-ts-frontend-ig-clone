@@ -7,7 +7,7 @@ const Item: React.FC<ItemProps> = ({ name, avatar }) => {
   return (
     <div className="text-center">
       <div
-        className="w-[56px] h-[56px] p-[3px] ring-2 border-2 border-white ring-red-500 rounded-full mx-[11px] overflow-hidden"
+        className="w-[56px] h-[56px] p-[3px] ring-2 border-2 border-white ring-red-500 rounded-full mx-[11px] overflow-hidden cursor-pointer"
         style={{
           backgroundImage: `url(${avatar})`,
           backgroundPosition: "center",
