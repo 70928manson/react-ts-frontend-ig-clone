@@ -83,7 +83,7 @@ const Comment: React.FC<IGPostProps> = ({
         {description}
       </p>
       <p className="text-blue-900 text-sm">{hashTags}</p>
-      <p className="text-gray-400 text-xs font-[500] mt-2">
+      <p className="text-gray-400 text-xs font-[500] mt-2 cursor-pointer">
         View all 999 comments
       </p>
       <p className="text-gray-400 text-[10px] mt-1">{createTime}</p>
