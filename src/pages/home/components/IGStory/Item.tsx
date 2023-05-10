@@ -1,9 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 type ItemProps = {
   name: string;
   avatar: string;
+  id: number;
 };
 
-const Item: React.FC<ItemProps> = ({ name, avatar }) => {
+const Item: React.FC<ItemProps> = ({ name, avatar, id }) => {
+  const go = useNavigate();
+
   return (
     <div className="text-center">
       <div
@@ -12,6 +17,9 @@ const Item: React.FC<ItemProps> = ({ name, avatar }) => {
           backgroundImage: `url(${avatar})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
+        }}
+        onClick={() => {
+          go(`/react-ts-frontend-ig-clone/stories/${id}`);
         }}
       ></div>
       <p className="text-xs mt-1">{name}</p>

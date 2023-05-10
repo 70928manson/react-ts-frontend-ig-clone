@@ -69,12 +69,12 @@ const IGStory: React.FC = () => {
         !data &&
         storyData?.map((item) => {
           const { id, name, avatar } = item;
-          return <Item key={id} name={name} avatar={avatar} />;
+          return <Item key={id} name={name} avatar={avatar} id={id}/>;
         })}
       {!isLoading &&
         data?.map((item) => {
           const { id, name, avatar } = item;
-          return <Item key={id} name={name} avatar={avatar} />;
+          return <Item key={id} name={name} avatar={avatar} id={id} />;
         })}
     </div>
   );
