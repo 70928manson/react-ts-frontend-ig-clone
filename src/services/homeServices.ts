@@ -21,7 +21,7 @@ type IGStory = {
 //baseUrl帶入api url得到資料
 export const homeApi = createApi({
   reducerPath: "homeApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3004/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "mockUrl" }),  //baseUrl: http://localhost:3004/
   endpoints: (builder) => ({
     getIGPosts: builder.query<IGPost[], number | "all">({
       query: (id) => {

@@ -1,7 +1,7 @@
 
 import StoryHeader from "../story/components/StoryHeader";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const storyData = [
   {
@@ -63,6 +63,7 @@ type StoryProps = {
 };
 
 const Story: React.FC = () => {
+  const { id } = useParams();
   const go = useNavigate();
 
     return (
@@ -70,7 +71,7 @@ const Story: React.FC = () => {
         <StoryHeader />
         <div className="flex justify-center items-center w-[100vw] h-[100vh] bg-[#1a1a1a]">
           <div className="bg-[#ffffff] rounded-lg p-3 text-xl">
-            Coming soon...
+            Here is Story-{id}, Coming soon...
           </div>
         </div>
     </>);
