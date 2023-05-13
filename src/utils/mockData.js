@@ -63,6 +63,7 @@ export const storyData = [
     id: 1,
     name: "bruce_1234",
     avatar: "/react-ts-frontend-ig-clone/images/avatars/a1.png",
+    picture: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1143&q=80",
   },
   {
     id: 2,
