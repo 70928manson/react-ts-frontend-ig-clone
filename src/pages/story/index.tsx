@@ -19,7 +19,7 @@ const Story: React.FC = () => {
     return data.id === Number(id)
   })
 
-  console.log(storyData.length);
+  console.log(userData[0].picture);
   
 
     return (
@@ -39,8 +39,9 @@ const Story: React.FC = () => {
               <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#ffffff"></path></g>
             </svg>
           </div>
-          <div className="bg-[#ffffff] rounded-lg p-3 mx-5 text-xl xl:w-1/3 lg:w-[40%] w-1/2 h-full bg-center bg-cover bg-no-repeat"
+          <div className="bg-[#1a1a1a] rounded-lg p-3 mx-5 text-xl xl:w-1/3 lg:w-[40%] w-1/2 h-full bg-center bg-cover bg-no-repeat"
                style={{backgroundImage: `url(${userData[0].picture})`}}>
+                 {/* bg 偷吃步 圖片放到本地端${userData[0].picture} url(/react-ts-frontend-ig-clone/images/avatars/a1.png)解決閃爍問題 */}
             <p className="text-slate-50">Here is the Story by <span>{userData[0].name}</span></p>
             <p className="text-slate-50">Coming soon...</p>
           </div>
