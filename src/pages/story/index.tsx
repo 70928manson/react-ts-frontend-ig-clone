@@ -39,11 +39,20 @@ const Story: React.FC = () => {
               <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#ffffff"></path></g>
             </svg>
           </div>
-          <div className="bg-[#1a1a1a] rounded-lg p-3 mx-5 text-xl xl:w-1/3 lg:w-[40%] w-1/2 h-full bg-center bg-cover bg-no-repeat"
+          <div className="bg-[#1a1a1a] rounded-lg mx-5 text-xl xl:w-1/3 lg:w-[40%] w-1/2 h-full bg-center bg-cover bg-no-repeat"
                style={{backgroundImage: `url(${userData[0].picture})`}}>
-                 {/* bg 偷吃步 圖片放到本地端${userData[0].picture} url(/react-ts-frontend-ig-clone/images/avatars/a1.png)解決閃爍問題 */}
-            <p className="text-slate-50">Here is the Story by <span>{userData[0].name}</span></p>
-            <p className="text-slate-50">Coming soon...</p>
+                 {/* url(/react-ts-frontend-ig-clone/images/avatars/a1.png)*/}
+            <div className="user-with-scrollbar"
+                 style={{ background: "linear-gradient( 180deg, rgba(38, 38, 38, .8) 0%, rgba(38, 38, 38, 0) 100% )" }}>
+              <div className="scrollbar"></div>
+              <div className="user flex items-center p-3">
+                <div className="user flex w-[32px] h-[32px] p-[3px] rounded-full bg-center bg-contain mr-2"
+                    style={{ backgroundImage: `url(${userData[0].avatar})` }}>
+                </div>
+                <p className="text-slate-50 text-base text-center"><span>{userData[0].name}</span></p>
+              </div>
+            </div>
+            <p className="text-slate-50  p-3 mt-4">Coming soon...</p>
           </div>
           <div className="cursor-pointer" 
             style = {{ visibility: (userData[0].id + 1) < storyData.length + 1 ? 'visible': 'hidden' }}
@@ -66,4 +75,3 @@ const Story: React.FC = () => {
   };
   
   export default Story;
-  

@@ -87,13 +87,13 @@ export const storyData = [
     id: 5,
     name: "zoe_0000",
     avatar: "/react-ts-frontend-ig-clone/images/avatars/a5.png",
-    picture: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+    picture: "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
   },
   {
     id: 6,
     name: "louis",
     avatar: "/react-ts-frontend-ig-clone/images/avatars/a6.png",
-    picture: "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80",
+    picture: "https://images.unsplash.com/photo-1564166174574-a9666f590437?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     id: 7,
@@ -117,6 +117,6 @@ export const storyData = [
     id: 10,
     name: "bruce_fe",
     avatar: "/react-ts-frontend-ig-clone/images/avatars/a10.png",
-    picture: "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80",
+    picture: "https://images.unsplash.com/photo-1607242792481-37f27e1d74e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
 ];
