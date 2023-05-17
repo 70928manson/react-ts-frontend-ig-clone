@@ -8,26 +8,24 @@ type ItemProps = {
 };
 
 const Item: React.FC<ItemProps> = ({ id }) => {
-  const [testWidth, setTestWidth] = useState(0);
+  const [barWidth, setBarWidth] = useState(0);
   const go = useNavigate();
 
   const userData = storyData.filter(function (data) {
     return data.id === Number(id)
   })
 
-  if(testWidth >= 100) {
-    setTestWidth(0);
-    go(`/react-ts-frontend-ig-clone/stories/${userData[0].id + 1}`)
+  if(barWidth >= 100) {
+    setBarWidth(0);
+    if(userData[0].id < 10) {
+      go(`/react-ts-frontend-ig-clone/stories/${userData[0].id + 1}`);
+    }
   }
-
-  //handle click -> set之後go
-  
-
 
   useEffect(() => {
     const nextBar = () => {
-      if (testWidth < 100) {
-        setTestWidth(testWidth + 0.25)
+      if (barWidth < 100) {
+        setBarWidth(barWidth + 0.25)
       }
       
     }
@@ -36,7 +34,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
     return () => {
       clearInterval(test);
     }
-  }, [testWidth])
+  }, [barWidth])
 
 
   return (
@@ -45,7 +43,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
           <div className="cursor-pointer"
               style = {{ visibility: (userData[0].id - 1) > 0 ? 'visible': 'hidden' }}
                onClick={() => {
-                setTestWidth(0);
+                setBarWidth(0);
                 go(`/react-ts-frontend-ig-clone/stories/${userData[0].id - 1}`);
               }}
             >
@@ -63,9 +61,8 @@ const Item: React.FC<ItemProps> = ({ id }) => {
                  style={{ background: "linear-gradient( 180deg, rgba(38, 38, 38, .8) 0%, rgba(38, 38, 38, 0) 100% )" }}>
               <div className="scrollbar h-0.5 bg-slate-400">
                 <div className="h-0.5 bg-white" id="storyBar"
-                     style={{ width: `${testWidth}%` }}>
+                     style={{ width: `${barWidth}%` }}>
                 </div>
-                {/* <button onClick={() => setTestWidth(testWidth+10)}>1123</button>   animate-widthChange*/}
               </div>
               <div className="user flex items-center py-3">
                 <div className="user flex w-[32px] h-[32px] p-[3px] rounded-full bg-center bg-contain mr-2"
@@ -79,7 +76,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
           <div className="cursor-pointer" 
             style = {{ visibility: (userData[0].id + 1) < storyData.length + 1 ? 'visible': 'hidden' }}
             onClick={() => {
-              setTestWidth(0);
+              setBarWidth(0);
               go(`/react-ts-frontend-ig-clone/stories/${userData[0].id + 1}`);
             }}
             >
