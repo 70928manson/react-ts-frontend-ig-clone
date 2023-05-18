@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type IGPostProps = {
   likes: number;
   description: string;
@@ -13,6 +15,23 @@ const Comment: React.FC<IGPostProps> = ({
   createTime,
   account,
 }) => {
+  const [likeColor, setLikeColor] = useState("none");
+  const [strokeColor, setStrokeColor] = useState("currentColor");
+
+  const [likesCount, setLikesCount] = useState(likes);
+
+  const handleClick = () => {
+    if(likeColor === "none") {
+      setLikeColor("#EF4444");
+      setStrokeColor("#EF4444");
+      setLikesCount(likesCount + 1);
+    }else {
+      setLikeColor("none");
+      setStrokeColor("currentColor");
+      setLikesCount(likesCount - 1);
+    }
+  }
+
   return (
     <div className="px-4">
       <div className="flex justify-between box-border mt-4 mb-4">
@@ -20,10 +39,11 @@ const Comment: React.FC<IGPostProps> = ({
         <div className="flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-[28px] w-[28px] mr-2"
-            fill="none"
+            className="h-[28px] w-[28px] mr-2 cursor-pointer"
+            fill={likeColor}
             viewBox="0 0 24 24"
-            stroke="currentColor"
+            stroke={strokeColor}
+            onClick={() => { handleClick() }}
           >
             <path
               strokeLinecap="round"
@@ -34,7 +54,7 @@ const Comment: React.FC<IGPostProps> = ({
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-[28px] w-[28px] mr-2"
+            className="h-[28px] w-[28px] mr-2 cursor-pointer"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -48,7 +68,7 @@ const Comment: React.FC<IGPostProps> = ({
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-[28px] w-[28px]"
+            className="h-[28px] w-[28px] cursor-pointer"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -63,7 +83,7 @@ const Comment: React.FC<IGPostProps> = ({
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-[28px] w-[28px]"
+          className="h-[28px] w-[28px] cursor-pointer"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -76,13 +96,13 @@ const Comment: React.FC<IGPostProps> = ({
           />
         </svg>
       </div>
-      <p className="text-sm font-bold mb-2">{likes} likes</p>
+      <p className="text-sm font-bold mb-2 cursor-pointer">{likesCount} likes</p>
 
       <p className="text-sm">
-        <span className="text-sm font-bold inline-block mr-1">{account}</span>
+        <span className="text-sm font-bold inline-block mr-1 cursor-pointer">{account}</span>
         {description}
       </p>
-      <p className="text-blue-900 text-sm">{hashTags}</p>
+      <p className="text-blue-900 text-sm cursor-pointer">{hashTags}</p>
       <p className="text-gray-400 text-xs font-[500] mt-2 cursor-pointer">
         View all 999 comments
       </p>
