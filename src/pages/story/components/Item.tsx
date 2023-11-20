@@ -9,6 +9,7 @@ type ItemProps = {
 
 const Item: React.FC<ItemProps> = ({ id }) => {
   const [barWidth, setBarWidth] = useState(0);
+  const [pause, setPause] = useState(false)
   const go = useNavigate();
 
   const userData = storyData.filter(function (data) {
@@ -16,25 +17,32 @@ const Item: React.FC<ItemProps> = ({ id }) => {
   })
 
   if(barWidth >= 100) {
-    setBarWidth(0);
-    if(userData[0].id < 10) {
-      go(`/react-ts-frontend-ig-clone/stories/${userData[0].id + 1}`);
+    if (Number(id) !== storyData.length) {
+      setBarWidth(0);
+      if(userData[0].id < storyData.length) {
+        go(`/react-ts-frontend-ig-clone/stories/${userData[0].id + 1}`);
+      }
+    }else {
+      go(`/react-ts-frontend-ig-clone/`);
     }
+  
   }
 
   useEffect(() => {
-    const nextBar = () => {
-      if (barWidth < 100) {
-        setBarWidth(barWidth + 0.25)
-      }
-      
-    }
-    const test = setInterval(nextBar, 10);
+    if (!pause) {
+      const nextBar = () => {
+        if (barWidth < 100) {
+          setBarWidth(barWidth + 0.25)
+        }
 
-    return () => {
-      clearInterval(test);
+      }
+      const barAnimation = setInterval(nextBar, 10);
+
+      return () => {
+        clearInterval(barAnimation);
+      }
     }
-  }, [barWidth])
+  }, [barWidth, pause])
 
 
   return (
@@ -64,11 +72,42 @@ const Item: React.FC<ItemProps> = ({ id }) => {
                      style={{ width: `${barWidth}%` }}>
                 </div>
               </div>
-              <div className="user flex items-center py-3">
-                <div className="user flex w-[32px] h-[32px] p-[3px] rounded-full bg-center bg-contain mr-2"
+              <div className="user flex justify-between items-center py-3">
+                <div className="flex items-center">
+                  <div className="user flex w-[32px] h-[32px] p-[3px] rounded-full bg-center bg-contain mr-2"
                     style={{ backgroundImage: `url(${userData[0].avatar})` }}>
+                  </div>
+                  <p className="text-slate-50 text-base text-center"><span>{userData[0].name}</span></p>
                 </div>
-                <p className="text-slate-50 text-base text-center"><span>{userData[0].name}</span></p>
+                <div className="flex">
+                  {
+                    !pause 
+                    ?  <svg className="cursor-pointer" onClick={() => {setPause(!pause)} } width="28px" height="28px" viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    stroke="#ffffff">
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> 
+                        <path fillRule="evenodd" clipRule="evenodd" 
+                          d="M9 7C9 6.44772 8.55228 6 8 6C7.44772 6 7 6.44772 7 7V17C7 17.5523 7.44772 18 8 18C8.55228 18 9 17.5523 9 17V7ZM17 7C17 6.44772 16.5523 6 16 6C15.4477 6 15 6.44772 15 7V17C15 17.5523 15.4477 18 16 18C16.5523 18 17 17.5523 17 17V7Z" 
+                          fill="#ffffff">
+                        </path> 
+                      </g>
+                    </svg> 
+                    : <svg className="cursor-pointer" onClick={() => {setPause(!pause)}} width="32px" height="32px" 
+                    fill="#ffffff" viewBox="0 0 1920 1920" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    stroke="#ffffff" transform="rotate(180)">
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" 
+                      strokeLinecap="round" strokeLinejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier"> 
+                        <path d="M694.018 926.244c-27.296 18.796-27.3 49.269 0 68.067l509.836 351.074c27.296 18.797 49.424 7.18 49.424-25.959V601.13c0-33.133-22.125-44.757-49.424-25.959L694.018 926.244Z" fillRule="evenodd">
+                        </path> 
+                      </g>
+                  </svg>
+                  }
+                </div>
               </div>
             </div>
             <p className="text-slate-50  p-3 mt-4">Coming soon...</p>

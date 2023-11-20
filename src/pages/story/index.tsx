@@ -12,7 +12,7 @@ const Story: React.FC = () => {
       <>
         <StoryHeader />
         {
-          id !== undefined && <Item id={id} />
+          id !== undefined && <Item key={id} id={id} />
         }
     </>);
   };
