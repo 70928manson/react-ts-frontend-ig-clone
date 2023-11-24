@@ -1,3 +1,6 @@
+# Instagram clone and story
+> 本專案為模擬 Instagram 之限時動態及貼文之功能。限時動態設定自動輪播及暫停播放功能。
+
 ## 如何使用此專案？
 
 1. 安裝依賴
