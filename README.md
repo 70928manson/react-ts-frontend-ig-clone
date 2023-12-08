@@ -44,7 +44,7 @@ file: db.json
   "posts": [
     {
       "id": 1,
-      "location": "布魯斯前端",
+      "location": "Manson",
       "account": "bruce_1234",
       "avatar": "/images/avatars/a1.png",
       "photo": "/images/posts/main1.png",
