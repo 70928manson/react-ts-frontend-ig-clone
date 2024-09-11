@@ -67,6 +67,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
   return (
     <>
       <div className="flex justify-center items-center w-full h-[calc(100vh-60px)] bg-[#1a1a1a] py-3">
+        {/* 左邊箭頭 */}
         <div
           className="cursor-pointer"
           style={{ visibility: userData.id - 1 > 0 ? "visible" : "hidden" }}
@@ -88,22 +89,28 @@ const Item: React.FC<ItemProps> = ({ id }) => {
           </svg>
         </div>
 
+        {/* 限時動態圖片 */}
         <div
           className="bg-[#1a1a1a] rounded-lg mx-5 text-xl xl:w-1/3 lg:w-[40%] w-1/2 h-full bg-center bg-cover bg-no-repeat"
-          style={{ backgroundImage: `url(${userData.picture})` }}
+          style={{ 
+            backgroundImage: `url(${userData.picture})` 
+          }}
         >
           {!imageLoaded && (
             <div className="flex justify-center items-center w-full h-full">
               <PulseLoader color="#ffffff" />
             </div>
           )}
+          {/* ====== 配合 bg-background ======= */}
           <img
             src={userData.picture}
             alt="story"
             style={{ display: "none" }} // 隱藏 img 元素
             onLoad={() => setImageLoaded(true)} // 當圖片載入完畢時觸發
             onError={() => setImageLoaded(true)} // 處理加載錯誤
+            loading="lazy"
           />
+          {/* ================================ */}
           <div
             className="user-with-scrollbar px-3 pt-3"
             style={{
@@ -111,6 +118,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
                 "linear-gradient( 180deg, rgba(38, 38, 38, .8) 0%, rgba(38, 38, 38, 0) 100% )",
             }}
           >
+            {/* 時間條 */}
             <div className="scrollbar h-0.5 bg-slate-400">
               <div
                 className="h-0.5 bg-white"
@@ -123,6 +131,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
             </div>
 
             <div className="user flex justify-between items-center py-3">
+              {/* user data */}
               <div className="flex items-center">
                 <div
                   className="user flex w-[32px] h-[32px] p-[3px] rounded-full bg-center bg-contain mr-2"
@@ -132,12 +141,12 @@ const Item: React.FC<ItemProps> = ({ id }) => {
                   <span>{userData.name}</span>
                 </p>
               </div>
+              {/* 暫停/播放按鈕 */}
               <div className="flex">
-                {/* 暫停/播放按鈕 */}
                 {!pause ? (
                   <svg
                     className="cursor-pointer"
-                    onClick={() => setPause(true)} // 暫停動畫
+                    onClick={() => setPause(true)} // 暫停時間條
                     width="28px"
                     height="28px"
                     viewBox="0 0 24 24"
@@ -155,7 +164,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
                 ) : (
                   <svg
                     className="cursor-pointer"
-                    onClick={() => setPause(false)} // 繼續動畫
+                    onClick={() => setPause(false)} // 繼續時間條
                     width="32px"
                     height="32px"
                     fill="#ffffff"
@@ -174,7 +183,7 @@ const Item: React.FC<ItemProps> = ({ id }) => {
             </div>
           </div>
         </div>
-
+        {/* 右邊箭頭 */}
         <div
           className="cursor-pointer"
           style={{
