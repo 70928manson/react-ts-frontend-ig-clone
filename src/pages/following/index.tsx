@@ -7,36 +7,6 @@ import { useAppSelector } from "hooks";
 const Following: React.FC = () => {
   const friendReducer = useAppSelector((state) => state.friendReducer);
   const friends = friendReducer.friends;
-  // const friends = [
-  //   {
-  //     id: 1,
-  //     location: "Singapore",
-  //     account: "max_999",
-  //     isFollowing: true,
-  //     avatar: "/images/avatars/a1.png",
-  //   },
-  //   {
-  //     id: 2,
-  //     location: "Taiwan",
-  //     account: "fm_999",
-  //     isFollowing: true,
-  //     avatar: "/images/avatars/a2.png",
-  //   },
-  //   {
-  //     id: 3,
-  //     location: "USA",
-  //     account: "joanne_999",
-  //     isFollowing: true,
-  //     avatar: "/images/avatars/a3.png",
-  //   },
-  //   {
-  //     id: 4,
-  //     location: "Japan",
-  //     account: "focus_999",
-  //     isFollowing: true,
-  //     avatar: "/images/avatars/a4.png",
-  //   },
-  // ];
 
   return (
     <>
