@@ -9,7 +9,7 @@ export const postData = [
     photo: "/react-ts-frontend-ig-clone/images/posts/main5.png",
     likes: 98,
     description: "睡過頭做到台北101站啦 RRRR",
-    hashTags: "#貓貓",
+    hashTags: "#出事了",
     createTime: "1 HOURS AGO",
   },
   {
