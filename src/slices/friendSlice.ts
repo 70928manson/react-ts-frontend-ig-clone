@@ -30,7 +30,7 @@ const initialState: friendState = {
     },
     {
       id: 3,
-      location: "Taiwan",
+      location: "Japan",
       account: "gogo_0214",
       isFollowing: true,
       avatar: "/react-ts-frontend-ig-clone/images/avatars/a3.png",
