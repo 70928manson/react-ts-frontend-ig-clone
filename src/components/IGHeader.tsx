@@ -4,7 +4,7 @@ const IGHeader: React.FC = () => {
   const go = useNavigate();
 
   return (
-    <header className="sticky top-0 bg-white border-b-[1px] border-gray-300">
+    <header className="sticky top-0 bg-white border-b-[1px] border-gray-300 z-50">
       <div className="flex justify-between items-center h-[60px] px-2 box-border lg:max-w-[1024px] lg:mx-auto lg:px-0">
         <img
           className="w-[100px] cursor-pointer"
