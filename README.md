@@ -1,42 +1,43 @@
-# Instagram clone and story
-> 本專案為模擬 Instagram 之限時動態及貼文之功能。限時動態設定自動輪播及暫停播放功能。
+# Instagram Lite clone
 
-## 如何使用此專案？
+**Instagram Lite clone** is a  practice project simulates Instagram's UI, Stories and Follower state handle.
 
-1. 安裝依賴
+The Stories feature includes automatic slideshow and pause playback functionality.
+
+### Tech Stack
+1. Built with **React** to enhance performance and user experience.
+2. Manages global application state with **Redux (RTK)** to streamline state management.
+3. Utilizes **TypeScript** for type definitions, improving code maintainability and security.
+4. Designs the user interface with **Tailwind CSS**.
+5. Implements lazy loading for images to boost performance by loading only visible content.
+
+## How to Use This Project？
+
+1. Install dependencies
 
 ```
 npm i
-
 ```
 
-2. 啟動專案
+2. Start the project
 
 ```
-
 npm run start
-
 ```
 
-## 如何美化程式碼排版？
+## How to Format Code？
 
 ```
-
 npm run prettier
-
 ```
 
-## 如何啟動Json server？
-
+## How to Start the JSON Server？
 ```
-
 npm run server
-
 ```
 
-## 測試API格式
+## API Format for Testing
 
 ```
 範例 file: db.json
-
 ```
